@@ -1,18 +1,19 @@
-//count digits of a number
+//factorial of a number
+
 #include <stdio.h>
 
 int main() {
-    int n, count = 0;
+    int n;
+    long long fact = 1;
 
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    while(n != 0) {
-        count++;
-        n /= 10;
+    for(int i = 1; i <= n; i++) {
+        fact *= i;
     }
 
-    printf("Number of digits = %d", count);
+    printf("Factorial = %lld", fact);
 
     return 0;
 }

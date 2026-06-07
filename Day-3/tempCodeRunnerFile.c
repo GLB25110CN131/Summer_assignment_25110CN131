@@ -1,27 +1,28 @@
-//LCM of two numbers
+//check prime or not
 
 #include <stdio.h>
 
 int main() {
-    int a, b, x, y, gcd;
+    int n, i, isPrime = 1;
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    x = a;
-    y = b;
-
-    while (y != 0) {
-        int temp = y;
-        y = x % y;
-        x = temp;
+    if (n <= 1) {
+        isPrime = 0;
+    } else {
+        for (i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
     }
 
-    gcd = x;
-
-    int lcm = (a * b) / gcd;
-
-    printf("LCM = %d\n", lcm);
+    if (isPrime)
+        printf("%d is a Prime Number.\n", n);
+    else
+        printf("%d is Not a Prime Number.\n", n);
 
     return 0;
 }
